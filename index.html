@@ -7,13 +7,9 @@
 </head>
 <body>
 
-  <div id="dog">
-    
-    <label for="name">Name</label>
-    <input type="text" id="name">
-    <button id="set">Set Name</button>
-
-  </div>
+  <script id="personTemplate" type="text/template">
+      <strong><%= name %></strong> (<%= year %>)
+  </script>
   
   <!-- link jQuery -->
   <script src="js/lib/jquery-min.js"></script>
@@ -22,9 +18,9 @@
   <!-- link Backbone -->
   <script src="js/lib/backbone-min.js"></script>
   <!-- link Models -->
-  <script src="js/models/dog.js"></script>
+  <script src="js/models/movie.js"></script>
   <!-- link Views -->
-  <script src="js/views/dog-view.js"></script>
+  <script src="js/views/movie-view.js"></script>
   <!-- link app.js -->
   <script src="js/app.js"></script>
 

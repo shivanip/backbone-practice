@@ -1,7 +1,7 @@
 $(function(){
 
-var dog = new Dog();
+var movies = new Movies();
 
 })
 
-// Let's see what's happening.
+// Let's see what's happening. 
