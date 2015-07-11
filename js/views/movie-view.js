@@ -13,22 +13,38 @@
 
 
 var MovieView = Backbone.View.extend({
-  tagName: 'li',
-  template: _.template( $('#personTemplate').html()),
-  render: function() {
-    this.$el.html( this.template(this.model.toJSON()) );
-    return this;
-  }
+  // tagName: 'li',
+  // template: _.template( $('#personTemplate').html()),
+  // render: function() {
+  //   this.$el.html( this.template(this.model.toJSON()) );
+  //   return this;
+  // }
 });
 
 var MoviesView = Backbone.View.extend({
-  tagName: 'ul',
-  render: function(){
-    this.collection.each(function(movie) {
-      var movieView = new MovieView({ model: movie });
-      this.$el.append(movieView.render().el);
-    }, this);
 
-    return this;
+  el: ".page",
+  render: function(){
+    var that = this;
+    var movies = new Movies();
+    movies.fetch({
+      success: function(Movies){
+        var template = _.template($("#movie-Template").html());
+        that.$el.html(template);
+      }
+    })
   }
+  // tagName: 'ul',
+  // initialize: function(){
+  //   console.log(this.collection);
+  // }
+  // render: function(){
+  //   this.collection.each(function(movie) {
+  //     var movieView = new MovieView({ model: movie });
+  //     this.$el.append(movieView.render().el);
+  //   }, this);
+
+  //   return this;
+  // }
 });
+ var view = new MoviesView();

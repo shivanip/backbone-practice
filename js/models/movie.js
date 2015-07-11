@@ -18,7 +18,7 @@ var Movies = Backbone.Collection.extend({
       return Backbone.sync(method, model, options);
     },
     initialize: function(){
-       console.log("TEST");
+       // console.log("TEST");
        this.fetch();
   }
 });
