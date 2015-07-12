@@ -1,17 +1,21 @@
 $(function(){
 
-var movies = new Movies();
+var movies = new MoviesCollection();
 
 })
 
-Movie = Backbone.Model.extend({
+// <--- Defining MovieModel --->
+
+var MovieModel = Backbone.Model.extend({
   defaults: {
     title: 'unknown',
     year: 1900
   }
 });
 
-var Movies = Backbone.Collection.extend({
+// <--- Defining MoviesCollection --->
+
+var MoviesCollection = Backbone.Collection.extend({
     model: Movie,
     url:"http://api.rottentomatoes.com/api/public/v1.0/lists/movies/box_office.json?limit=16&country=us&apikey=gaggg3wsjg3z4amcrfhr45z5",
     parse: function(data) {
@@ -26,17 +30,12 @@ var Movies = Backbone.Collection.extend({
     initialize: function(){
        // console.log("TEST");
        this.fetch();
-  }
+  } 
 });
+return MoviesCollection;
 
-var MovieView = Backbone.View.extend({
-  // tagName: 'li',
-  // template: _.template( $('#personTemplate').html()),
-  // render: function() {
-  //   this.$el.html( this.template(this.model.toJSON()) );
-  //   return this;
-  // }
-});
+// <--- Defining MoviesCollection View --->
+
 var MoviesView = Backbone.View.extend({
 
   el: ".page",
@@ -50,17 +49,13 @@ var MoviesView = Backbone.View.extend({
       }
     })
   }
-  // tagName: 'ul',
-  // initialize: function(){
-  //   console.log(this.collection);
-  // }
-  // render: function(){
-  //   this.collection.each(function(movie) {
-  //     var movieView = new MovieView({ model: movie });
-  //     this.$el.append(movieView.render().el);
-  //   }, this);
-
-  //   return this;
-  // }
+  
 });
- var view = new MoviesView();
+ 
+var view = new MoviesView();
+
+// <--- Defining MovieModel View --->
+
+var MovieView = Backbone.View.extend({
+
+});
