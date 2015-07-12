@@ -6,25 +6,48 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <div class="container">
-    <h1>Movies Available</h1>
-    <hr/>
-    <div clas = "page"></div>
-  </div>
 
-  <script id="movie-Template" type="text/template">
-      <%_.each(Movies, function(Movie){%>
-        <strong><%= Movie.title %></strong>
-        <strong><%= Movie.year %></strong>>
-      <%})%>
-  </script>
-  
+  <div id="main">
+    <h1>My Movies</h1>
+    <hr/>
+
+    <ul id="movies">
+        
+    </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   <!-- link jQuery -->
   <script src="js/lib/jquery-min.js"></script>
   <!-- link Underscore -->
   <script src="js/lib/underscore-min.js"></script>
   <!-- link Backbone -->
   <script src="js/lib/backbone-min.js"></script>
+  <!-- link Backbone LocalStorage adaptor -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone-localstorage.js/1.1.16/backbone.localStorage.js"></script>
   <!-- link app.js -->
   <script src="js/app.js"></script>
 
