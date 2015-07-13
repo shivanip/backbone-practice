@@ -15,18 +15,38 @@
     </head>
     
     <body>
-      
-    <h1>Available Movies</h1>
-    <div id="movies" >
 
-    </div>
+      <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">Rotten Reviews</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">In Theaters<span class="sr-only">(current)</span></a></li>
+            <li><a href="#">New on DVD's</a></li>
+            <li></li>
+          </ul>
+          <form class="navbar-form navbar-left" role="search">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Search">
+            </div>
+            <button type="submit" class="btn btn-default">Review Me</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+      <hr/>
+      <div id="movies" >
         
-    <!-- JavaScript Includes -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.0.0/backbone-min.js"></script>
+      </div>
+          
+      <!-- JavaScript Includes -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js"></script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.0.0/backbone-min.js"></script>
 
-    <script src="js/app.js"></script>
+      <script src="js/app.js"></script>
     </body>
 </html>
 
