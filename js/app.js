@@ -86,10 +86,12 @@ $(function(){
 
     inTheaters: function(){
       console.log("Test in in threater");
+      $("#movies").html("");
       new MoviesView([],{url:'http://api.rottentomatoes.com/api/public/v1.0/lists/movies/upcoming.json?page_limit=16&page=1&country=us&apikey=gaggg3wsjg3z4amcrfhr45z5'});
     },
     newOnDvd: function(){
       console.log("Test in on dvd");
+      $("#movies").html("");
       new MoviesView([],{url:'http://api.rottentomatoes.com/api/public/v1.0/lists/dvds/current_releases.json?page_limit=16&page=1&country=us&apikey=gaggg3wsjg3z4amcrfhr45z5'});
     }
   });
