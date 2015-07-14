@@ -15,7 +15,9 @@ $(function(){
 
   var MovieList = Backbone.Collection.extend({
     model: Movie,
-    url:"http://api.rottentomatoes.com/api/public/v1.0/lists/movies/box_office.json?limit=16&country=us&apikey=gaggg3wsjg3z4amcrfhr45z5",
+    url:function() {
+       return this.url;
+    },
     parse: function(data) {
       console.log(data.movies);
       return data.movies;
@@ -25,8 +27,10 @@ $(function(){
       options.dataType = "jsonp";
       return Backbone.sync(method, model, options);
     },
-    initialize: function(){
-       console.log("Collection initialized");
+    initialize: function(model,options){
+       this.url = options.url;
+       console.log("Collection initialized "+ this.url);
+
     } 
 
   });
@@ -53,8 +57,9 @@ $(function(){
     tagName:'li',
     className:'row',
     el: $('#movies'),
-    initialize: function(){        
-      this.collection = new MovieList();      
+    initialize: function(model,options){
+      console.log("url="+options.url);
+      this.collection = new MovieList([],{url:options.url});      
       this.collection.on("sync", this.render, this);
       this.collection.fetch();      
     },
@@ -69,16 +74,24 @@ $(function(){
     }
   });
 
-  new MoviesView();
+  //new MoviesView();
 
   //Backbone Movie router
 
   var MovieRouter = Backbone.Router.extend({
     routes: {
-      "inTheaters": "#"
+      "inTheaters": "inTheaters",
+      "newOnDvd":"newOnDvd"
     },
 
-    about: function(){}
+    inTheaters: function(){
+      console.log("Test in in threater");
+      new MoviesView([],{url:'http://api.rottentomatoes.com/api/public/v1.0/lists/movies/upcoming.json?page_limit=16&page=1&country=us&apikey=gaggg3wsjg3z4amcrfhr45z5'});
+    },
+    newOnDvd: function(){
+      console.log("Test in on dvd");
+      new MoviesView([],{url:'http://api.rottentomatoes.com/api/public/v1.0/lists/dvds/current_releases.json?page_limit=16&page=1&country=us&apikey=gaggg3wsjg3z4amcrfhr45z5'});
+    }
   });
 
   new MovieRouter();
