@@ -1,6 +1,8 @@
 
 $(function(){
 
+  // Backbone Movie View
+
   var Movie = Backbone.Model.extend({
     defaults:{
       title: 'My movies',
@@ -8,6 +10,8 @@ $(function(){
       posters:{thumbnail:""}
     }
   });
+
+  // Backbone Movies Collection
 
   var MovieList = Backbone.Collection.extend({
     model: Movie,
@@ -27,6 +31,8 @@ $(function(){
 
   });
 
+  // Backbone Movie View
+
   var MovieView = Backbone.View.extend({
     tagName: 'ul',
     //className:'col-md-1',
@@ -35,11 +41,13 @@ $(function(){
     },
     render: function(){
 
-      this.$el.html('<div class="row"><div class="col-xs-6 col-md-3"><a href="#" class="thumbnail"><img src="' + this.model.get('posters').thumbnail+ '" /> </a></div>' + '<figcaption>'+this.model.get('title')+'</figcaption>' + '<span>' + this.model.get('year')+'  '+ this.model.get('mpaa_rating')+'</span><hr/><span>'+this.model.get('synopsis') +'</span></div>');
+      this.$el.html('<div class="row jumbotron"><div class="col-xs-6 col-md-3"><a href="#" class="thumbnail"><img src="' + this.model.get('posters').thumbnail+ '" /> </a></div>' + '<figcaption>'+this.model.get('title')+'</figcaption>' + '<span>' + this.model.get('year')+'  '+ this.model.get('mpaa_rating')+'</span><hr/><span>'+this.model.get('synopsis') +'</span></div>');
       // console.log(this);
       return this; // It's good practice for chaining.
     }
   });
+
+  // Backbone Movies List View
 
   var MoviesView = Backbone.View.extend({
     tagName:'li',
@@ -63,4 +71,25 @@ $(function(){
 
   new MoviesView();
 
+  //Backbone Movie router
+
+  var MovieRouter = Backbone.Router.extend({
+    routes: {
+      "inTheaters": "#"
+    },
+
+    about: function(){}
+  });
+
+  new MovieRouter();
+  Backbone.history.start();
+
 });
+
+
+
+
+
+
+
+

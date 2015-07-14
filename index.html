@@ -16,42 +16,32 @@
     
     <body>
 
-      <!-- <ul class="nav nav-tabs navbar-fixed-top">
-        <li class="active"><a href="#home" data-toggle="tab" aria-expanded="true">Home</a></li>
-        <li class=""><a href="#profile" data-toggle="tab" aria-expanded="false">Profile</a></li>
-        <li class="disabled"><a>Disabled</a></li>
-        <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
-            Dropdown <span class="caret"></span>
-          </a>
-          <ul class="dropdown-menu">
-            <li><a href="#dropdown1" data-toggle="tab">Action</a></li>
-            <li class="divider"></li>
-            <li><a href="#dropdown2" data-toggle="tab">Another action</a></li>
-          </ul>
-        </li>
-      </ul>
- -->
-      <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <a class="navbar-brand" href="#">Rotten Reviews</a>
+      <!-- <ul class="nav nav-pills">
+              <li class="active"><a href="#">Rotten Reviews</a></li>
+              <li class="active"><a href="#">In Theaters</a></li>
+              <li><a href="#">New on DVD's</a></li>
+            </ul> -->
+
+        <nav class="navbar navbar-default navbar-fixed-top">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <a class="navbar-brand" href="#">Rotten Reviews</a>
+          </div>
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="#">In Theaters<span class="sr-only">(current)</span></a></li>
+              <li><a href="#">New on DVD's</a></li>
+              <li></li>
+            </ul>
+            <form class="navbar-form navbar-left" role="search">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search">
+              </div>
+              <button type="submit" class="btn btn-default">Review Me</button>
+            </form>
+          </div>
         </div>
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">In Theaters<span class="sr-only">(current)</span></a></li>
-            <li><a href="#">New on DVD's</a></li>
-            <li></li>
-          </ul>
-          <form class="navbar-form navbar-left" role="search">
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Search">
-            </div>
-            <button type="submit" class="btn btn-default">Review Me</button>
-          </form>
-        </div>
-      </div>
-    </nav>
+      </nav>
       <hr/>
       <div id="movies" >
         
